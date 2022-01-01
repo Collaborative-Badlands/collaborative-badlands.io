@@ -10,10 +10,90 @@
   <link rel="shortcut icon" type="image/x-icon" img src="doc\Collaborative Badlands.png" alt="">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-<style>
-    html,
-</style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+
+
+  
+ <style>
+      html, body{
+          width: 100%;
+          height: 100%;
+      }
+      #map{
+          width: 70%;
+          height: 80%;
+      }
+  </style>
+  <div id="map" style="float: right; height:610px ;"></div>
+  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    
+    <script>
+      var map;
+  </script>
+
+
+
+<script>
+  function w3_open() {
+    document.getElementById("main").style.marginLeft = "15%";
+    document.getElementById("mySidebar").style.width = "15%";
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("openNav").style.display = 'none';
+  }
+  function w3_close() {
+    document.getElementById("main").style.marginLeft = "0%";
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("openNav").style.display = "inline-block";
+  }
+  </script>
+
+<script src="./L.KML.js"></script>
+
+</head>
+<body>
+<body style="background-color:rgb(255, 255, 255);"></body>
+
+<script>
+//set center pt and zoom level
+
+
+map = L.map('map').setView([23.007382654569863, 120.41454238768904], 13);
+
+L.tileLayer('https://wmts.nlsc.gov.tw/wmts/EMAP/default/EPSG:3857/{z}/{y}/{x}', {
+    attribution: '&copy; <a href="https://www.tgos.tw/tgos/web/tgos_home.aspx">TGOS</a>'
+}).addTo(map);
+
+
+
+// 設定地圖名稱以及對應的TileLayer
+var mapLayers = {
+    '中文': L.tileLayer('https://wmts.nlsc.gov.tw/wmts/EMAP98/default/GoogleMapsCompatible/{z}/{y}/{x}', {
+        attribution: '&copy; <a href="https://www.tgos.tw/tgos/web/tgos_home.aspx">TGOS</a>'
+    }),
+    '英文': L.tileLayer('https://wmts.nlsc.gov.tw/wmts/EMAP97/default/GoogleMapsCompatible/{z}/{y}/{x}', {
+        attribution: '&copy; <a href="https://www.tgos.tw/tgos/web/tgos_home.aspx">TGOS</a>'
+    }),
+    '衛星': L.tileLayer('https://wmts.nlsc.gov.tw/wmts/PHOTO_MIX/default/GoogleMapsCompatible/{z}/{y}/{x}', {
+        attribution: '&copy; <a href="https://www.tgos.tw/tgos/web/tgos_home.aspx">TGOS</a>'
+    }),
+    'OSM': L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }),
+    'zuocheng': L.tileLayer('https://wmts.nlsc.gov.tw/wmts/PHOTO_MIX/default/GoogleMapsCompatible/{z}/{y}/{x}',{
+        attribution: '&copy; <a href="http://www.tgos.tw/MapSitesAPI/themes/20974'
+    }),
+  
+
+
+};
+mapLayers['中文'].addTo(map); // 使用中文地圖作為預設
+L.control.layers(mapLayers).addTo(map); // 加入地圖切換控制項         
+
+
+</script>
 
 
 
