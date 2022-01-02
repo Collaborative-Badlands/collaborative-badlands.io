@@ -44,11 +44,10 @@
         float:left;
         height:80%;
         text-align:center;
-        line-height:280px;
         font-size:15px;
-        color:#ffffff;
-        font-weight:bold;
-        background-color:#cecece;
+        color:black;
+        font: weight 2px;
+        background-color:white;
     }
         #body{       
         width: 80%;
@@ -83,6 +82,29 @@
          margin: auto;
          
      }
+     .label {
+        height: 10%;
+        position:relative;
+        float: left;
+        font-size: 20px;
+        text-decoration: underline;
+        text-align: center;
+        width: 100%;
+        background-color: white;
+        border-color: black;
+        
+    }
+    
+    .label2 {
+        margin-top: 20%;
+        height: 40%;
+        position: relative;
+        background-color: white;
+        border-radius: 6px;
+        border-width: 2px;
+        border-color: black;
+    }
+
 
      .col1 {
          margin-top: 30px;
@@ -178,8 +200,8 @@
     .dot {
     cursor: pointer;
     height: 15px;
-    width: 15px;
-    margin: 0 2px;
+    width: 5px;
+    top:5%;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
@@ -276,7 +298,7 @@
         
     </div>
     <script>
-                    var slideIndex = 1;
+             var slideIndex = 1;
             showSlides(slideIndex);
 
             // Next/previous controls
@@ -309,7 +331,16 @@
 
     <div class="wrapper">
       <div class="content">
-        <div id="Sidebar">Sidebar</div>
+        <div id="Sidebar">
+            <div class="label">
+               <div style="letter-spacing: 5px;">NCKU USR</div> 
+            </div>
+
+         <div class="label2">
+             <a href="http://cobadlands.blogspot.com/"><img src="docs\Collaborative Badlands.png" style="width: 100%;" alt="">
+            </a>         
+        </div>
+        </div>
     <div class="body">
     <div id="map" style="float: right; height:100% ;">
     </div>
