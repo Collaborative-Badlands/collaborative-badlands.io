@@ -6,13 +6,12 @@
         <meta name="viewport" content="width=device-width, intial-scale=1.0"/>
     
         <link rel="shortcut icon" type="image/x-icon" img src="doc\Collaborative Badlands.png" alt="">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
      
     </head>
     <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
-    
     
     <style type="text/css">
         html, body {
@@ -22,6 +21,13 @@
         #Header{
         width: 100%;
         height:200px;
+        display: block;
+        background-color:white;
+    }
+        #Barspace{
+        width: 100%;
+        height:300px;
+        margin: auto;
         text-align:center;
         line-height:80px;
         font-size:15px;
@@ -34,11 +40,10 @@
         float:left;
         height:80%;
         text-align:center;
-        line-height:280px;
         font-size:15px;
-        color:#ffffff;
-        font-weight:bold;
-        background-color:#cecece;
+        color:black;
+        font: weight 2px;
+        background-color:white;
     }
         #body{       
         width: 80%;
@@ -55,8 +60,21 @@
           height: 80%;
           float: right;
       }
-         
+    
      .row {
+        height:20%; 
+        width:100%;
+        margin-bottom: 10;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px; 
+    }
+
+     .row1 {
          height:20%; 
          width:100%;
          margin-bottom: 10;
@@ -65,12 +83,52 @@
      .row2 {
          height:100%; 
          width:100%;
-         margin: 5%;
-         padding-top: 10px;
-        
+                
      }
+     .row3 {
+         height:100%; 
+         width:100%;
+         margin: auto;
+         
+     }
+     .label {
+        height: 10%;
+        position: relative;
+        padding:20px;
+        background-color: red;
+        border-radius: 6px;
+        border-width: 2px;
+        border-color: black;
+        text-align: center;
+        text-align: initial;
+        margin-bottom: 5%;
+        
+    }
+    .label2 {
+        height: 40%;
+        position: relative;
+        padding:20px;
+        background-color: yellow;
+        border-radius: 6px;
+        border-width: 2px;
+        border-color: black;
+    }
+    .label3 {
+        width: 20%;
+        height:80%;
+        margin: 3%;
+        border-radius: 20px;
+        border: yellow solid 6px; 
+        float: left;
+        text-align: center;
+
+    }
 
      .col1 {
+         -webkit-box-flex: 0;
+        -ms-flex: 0 0 8.33333%;
+        flex: 0 0 8.33333%;
+        width: 8.33333%; 
          margin-top: 30px;
          padding-right: 10px;
          width:150px;
@@ -91,12 +149,112 @@
        margin-bottom: 10%;
        color:#ffffff;
        background-color: #577284;
-    }    
+    }  
+    *{
+        box-sizing:border-box
+    }
+
+
+    /* Slideshow container */
+    .slideshow-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-left: 5%;
+    background-color: white;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+    display:none;
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right:77%;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 3px;
+    user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+    right: 15%;
+    border-radius: 3px ;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+    }
+
+    /* Caption text */
+    .text {
+    color: #f2f2f2;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    padding: 4px;
+    position: absolute;
+    bottom: 1px;
+    width: 100%;
+    text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    left: 20%;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 5px;
+    top:5%;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    }
+
+    .active, .dot:hover {
+    background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+    }
+
+    @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+    }
     </style>
 
 <body>
     <div id="Header">
-        <div class="row">
             <div class="col1">
                  <a href="wishes.html">
                      <img src="docs/ICON (4).png" alt="" width="80%">
@@ -117,14 +275,31 @@
                     <img src="docs/ICON (5).png" alt="" width="80%">
                 </a>
            </div>
+           <div class="label3">
+               <br>
+               USER
+               <br>
+               
+            </div>
+           
                       
-        </div>
     </div>
-
+    <div id="Barspace">
+        
+    </div>
+    
 
     <div class="wrapper">
       <div class="content">
-        <div id="Sidebar">Sidebar</div>
+        <div id="Sidebar">
+            <div class="label">text</div>
+            <div class="label">text</div>
+            <div class="label">text</div>
+
+         <div class="label2">
+         <img src="docs\Collaborative Badlands.png" style="width: 100%;" alt="">
+        </div>
+        </div>
     <div class="body">
     <div id="map" style="float: right; height:100% ;">
     </div>
@@ -137,7 +312,7 @@
     <script src="./L.KML.js"></script>
     
         </head>
-     <body>
+    
     <body style="background-color:rgb(255, 255, 255);"></body>
     
     <script>
@@ -175,16 +350,15 @@
     };
     mapLayers['中文'].addTo(map); // 使用中文地圖作為預設
     L.control.layers(mapLayers).addTo(map); // 加入地圖切換控制項         
-    
-    
+  
     </script>
+
         </div>
      <div style='clear:both;'></div> 
       </div>
     </div>
     <footer class="footer">Collaborative Badlands Think Tank © National Cheng Kung University</footer>
     
-  </body>   
 
 
 
