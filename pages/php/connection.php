@@ -1,23 +1,10 @@
 <?php
+$link = myysql_connect("localhost","root","1234","test")
+or die("Error!<br/>");
+echo "MYSQL test Success! <br/>";
+$sql = "INSERT INTO `account`(`id`,`adminname`,`password`) VALUES(\"Carla0503\",\"Mengling\",\850503Carla\")";
+echo "SQL 字串: $sql <br/>";
 
-$conn ="";
-
-try{
-    $_servername = "localhost:3306";
-    $dbname = "collaborativebadlands_db";
-    $username = "root";
-    $password = "";
-
-    $conn = new PDO{
-        "mysql:host =$servename; dbname=loginPage",
-        $username,$password
-    };
-
-$conn->setAttribute(PDO::ATTER_ERRMODE,
-                    PDO::ERRMODE_EXCEPTION);
-catch(PDOException $e){
-   echo "Connection failed: " . $e->getMessage();
-}
-
-
-}
+//送出UTF unicide MYSQL 
+mysqli_query($link, 'SET NAMES utf8');
+mysql_query($link,$sql)
